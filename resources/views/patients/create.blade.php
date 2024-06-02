@@ -113,8 +113,12 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                     <label for="condition" class="col-form-label">Condition</label>
-                                                        <input type="text" class="form-control @error('condition') is-invalid @enderror" id="condition" name="condition" value="{{ old('condition') }}" required>
-                                                        @if ($errors->has('condition'))
+                                                        <select name="condition" id="condition" class="form-control @error('condition') is-invalid @enderror" value="{{ old('condition') }}" required>
+                                                            <option selected>--Select--</option>
+                                                            <option value="Pending" class="text-warning">Pending</option>
+                                                            <option value="Approved" class="text-success">Approved</option>
+                                                            <option value="Cancelled" class="text-danger">Cancelled</option>
+                                                        </select> @if ($errors->has('condition'))
                                                             <span class="text-danger">{{ $errors->first('condition') }}</span>
                                                         @endif
                                                 </div>
