@@ -29,8 +29,8 @@ class UpdateResponderRequest extends FormRequest
             'address' => 'required|string|max:255',
             'gender' => 'required|string|max:10',
             'civilStatus' => 'required|string|max:20',
-            'mobileNumber' => 'required|string|min:1|max:11',
-            'employeeId' => 'required|string|min:1|max:10000000000',
+            'mobileNumber' => 'required|string|min:1|max:11|unique:responders,mobileNumber,'.$this->responder->mobileNumber,
+            'employeeId' => 'required|string|min:1|max:10000000000|unique:responders,employeeId,'.$this->responder->employeeId,
             'position' => 'required|string|max:50',
             'status' => 'required|string|max:50',
             'division' => 'required|string|max:50'

@@ -139,41 +139,65 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <label for="condition" class="col-form-label">Vehicle Plate Number</label>
-                                                        <select name="condition" id="condition" class="form-control @error('condition') is-invalid @enderror" value="{{ old('condition') }}" required>
-                                                            <option selected>--Select--</option>
-                                                            <option value="Pending" class="text-warning">Pending</option>
-                                                            <option value="Approved" class="text-success">Approved</option>
-                                                            <option value="Cancelled" class="text-danger">Cancelled</option>
+                                                    <label for="plateNumber" class="col-form-label">Assigned Vehicle</label>
+                                                        <select name="plateNumber" id="plateNumber" class="form-control @error('plateNumber') is-invalid @enderror" 
+                                                                value="{{ old('plateNumber') }}" 
+                                                                {{ empty($vehicles) ? 'disabled' : '' }} required>
+
+                                                            @if (!empty($vehicles)) 
+                                                                @foreach ($vehicles as $vehicle)
+                                                                    <option value="{{ $vehicle->id }}" class="text-warning">
+                                                                        {{ $vehicle->name }} 
+                                                                    </option>
+                                                                @endforeach
+                                                            @else
+                                                                <option value="" disabled>No vehicles available</option> 
+                                                            @endif
                                                         </select>
-                                                            @if ($errors->has('condition'))
-                                                                <span class="text-danger">{{ $errors->first('condition') }}</span>
+                                                            @if ($errors->has('plateNumber'))
+                                                                <span class="text-danger">{{ $errors->first('plateNumber') }}</span>
                                                             @endif
                                                 </div>
                                             
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <label for="reqStatus" class="col-form-label">Assigned Driver</label>
-                                                        <select name="reqStatus" id="reqStatus" class="form-control @error('reqStatus') is-invalid @enderror" value="{{ old('reqStatus') }}" required>
-                                                            <option selected>--Select--</option>
-                                                            <option value="Pending" class="text-warning">Pending</option>
-                                                            <option value="Approved" class="text-success">Approved</option>
-                                                            <option value="Cancelled" class="text-danger">Cancelled</option>
+                                                    <label for="name" class="col-form-label">Assigned Driver</label>
+                                                        <select name="name" id="name" class="form-control @error('name') is-invalid @enderror" 
+                                                                value="{{ old('name') }}" 
+                                                                {{ empty($drivers) ? 'disabled' : '' }} required>
+
+                                                            @if (!empty($drivers)) 
+                                                                @foreach ($drivers as $driver)
+                                                                    <option value="{{ $driver->id }}" class="text-warning">
+                                                                        {{ $driver->name }} 
+                                                                    </option>
+                                                                @endforeach
+                                                            @else
+                                                                <option value="" disabled>No drivers available</option> 
+                                                            @endif
                                                         </select>
-                                                            @if ($errors->has('reqStatus'))
-                                                                <span class="text-danger">{{ $errors->first('reqStatus') }}</span>
+                                                            @if ($errors->has('name'))
+                                                                <span class="text-danger">{{ $errors->first('name') }}</span>
                                                             @endif
                                                 </div>
 
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <label for="reqStatus" class="col-form-label">Assigned Reponder</label>
-                                                        <select name="reqStatus" id="reqStatus" class="form-control @error('reqStatus') is-invalid @enderror" value="{{ old('reqStatus') }}" required>
-                                                            <option selected>--Select--</option>
-                                                            <option value="Pending" class="text-warning">Pending</option>
-                                                            <option value="Approved" class="text-success">Approved</option>
-                                                            <option value="Cancelled" class="text-danger">Cancelled</option>
+                                                    <label for="name" class="col-form-label">Assigned Reponder</label>
+                                                        <select name="name" id="name" class="form-control @error('name') is-invalid @enderror" 
+                                                                value="{{ old('name') }}" 
+                                                                {{ empty($responders) ? 'disabled' : '' }} required>
+
+                                                            @if (!empty($responders)) 
+                                                                @foreach ($responders as $responder)
+                                                                    <option value="{{ $responder->id }}" class="text-warning">
+                                                                        {{ $responder->name }} 
+                                                                    </option>
+                                                                @endforeach
+                                                            @else
+                                                                <option value="" disabled>No responders available</option> 
+                                                            @endif
                                                         </select>
-                                                            @if ($errors->has('reqStatus'))
-                                                                <span class="text-danger">{{ $errors->first('reqStatus') }}</span>
+                                                            @if ($errors->has('name'))
+                                                                <span class="text-danger">{{ $errors->first('name') }}</span>
                                                             @endif
                                                 </div>
                                             </div>

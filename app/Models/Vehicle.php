@@ -24,6 +24,6 @@ class Vehicle extends Model
         'registrationDate',
         'purchaseCost',
         'depreciationCost',
-        'propertyNumber'
+        'propertyNumber',
     ];                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 }

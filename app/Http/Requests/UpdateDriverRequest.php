@@ -29,8 +29,8 @@ class UpdateDriverRequest extends FormRequest
             'address' => 'required|string|max:255',
             'gender' => 'required|string|max:10',
             'civilStatus' => 'required|string|max:10',
-            'mobileNumber' => 'required|string|max:11',
-            'employeeId' => 'required|string|max:255',
+            'mobileNumber' => 'required|string|max:11|unique:drivers,mobileNumber,'.$this->driver->mobileNumber,
+            'employeeId' => 'required|string|max:255|unique:drivers,employeeId,'.$this->driver->employeeId,
             'designation' => 'required|string|max:50',
             'status' => 'required|string|max:50',
             'division' => 'required|string|max:50'

@@ -24,9 +24,11 @@ class UpdatePartRequest extends FormRequest
         return [
             
             'code' => 'required|string|max:10000|unique:parts,code,'.$this->part->code,
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string|max:250',
             'category' => 'required|string|max:250',
             'quantity' => 'required|string|max:250',
+            'unit' => 'required|string|max:250',
             'dop' => 'required|string|max:250',
             'description' => 'nullable|string'
         ];

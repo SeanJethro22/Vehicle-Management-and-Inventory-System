@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('parts', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
+            $table->string('image');
             $table->string('name');
             $table->string('category');
             $table->string('quantity');
+            $table->string('unit');
             $table->string('dop');
             $table->text('description')->nullable();
             $table->timestamps();

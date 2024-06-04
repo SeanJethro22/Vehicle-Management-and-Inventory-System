@@ -6,6 +6,8 @@ use App\Models\Part;
 use App\Http\Requests\StorePartRequest;
 use App\Http\Requests\UpdatePartRequest;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 
 class PartController extends Controller
@@ -27,9 +29,12 @@ class PartController extends Controller
      */
     public function index(): View
     {
-        return view('parts.index', [
-            'parts' => Part::latest()->paginate(10)
-        ]);
+
+        $parts = Part::latest()->paginate(5);
+
+        return view('parts.index',compact('parts'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
 
     /**
@@ -45,9 +50,33 @@ class PartController extends Controller
      */
     public function store(StorePartRequest $request): RedirectResponse
     {
-        Part::create($request->all());
+
+        $request->validate([
+
+            'code' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required',
+            'category' => 'required',
+            'quantity' => 'required',
+            'unit' => 'required',
+            'dop' => 'required',
+            'description' => 'required',
+        ]);
+    
+        $input = $request->all();
+    
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        Part::create($input);
+       
         return redirect()->route('parts.index')
                 ->withSuccess('New Part is added successfully.');
+
     }
 
     /**
@@ -55,9 +84,7 @@ class PartController extends Controller
      */
     public function show(Part $part): View
     {
-        return view('parts.show', [
-            'part' => $part
-        ]);
+        return view('parts.show', compact('part'));
     }
 
     /**
@@ -65,19 +92,43 @@ class PartController extends Controller
      */
     public function edit(Part $part): View
     {
-        return view('parts.edit', [
-            'part' => $part
-        ]);
+        return view('parts.edit', compact('part'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePartRequest $request, Part $product): RedirectResponse
+    public function update(UpdatePartRequest $request, Part $part): RedirectResponse
     {
-        $part->update($request->all());
-        return redirect()->back()
-                ->withSuccess('Part is updated successfully.');
+
+        $request->validate([
+
+            'code' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required',
+            'category' => 'required',
+            'quantity' => 'required',
+            'unit' => 'required',
+            'dop' => 'required',
+            'description' => 'required',
+        ]);
+    
+        $input = $request->all();
+    
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
+
+        $part->update($input);
+      
+        return redirect()->route('parts.index')
+                        ->withSuccess('Part is updated successfully.');
+
     }
 
     /**

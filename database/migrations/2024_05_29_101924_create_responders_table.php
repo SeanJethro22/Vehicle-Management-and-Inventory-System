@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('responders', function (Blueprint $table) {
             $table->id();
@@ -19,11 +19,10 @@ return new class extends Migration
             $table->string('age');
             $table->string('gender');
             $table->string('civilStatus');
-            $table->string('mobileNumber');
-            $table->string('employeeId');
+            $table->string('mobileNumber', 11)->unique();
+            $table->string('employeeId')->unique();
             $table->string('position');
             $table->string('status');
-            $table->string('division');
             $table->timestamps();
         });
     }

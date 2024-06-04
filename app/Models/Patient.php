@@ -22,4 +22,5 @@ class Patient extends Model
         'condition',
         'reqStatus'
     ];
+    
 }

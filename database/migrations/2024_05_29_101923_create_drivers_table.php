@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('dob');
-            $table->string('age');
+            $table->string('age', 2);
             $table->string('gender');
             $table->string('civilStatus');
-            $table->string('mobileNumber');
-            $table->string('employeeId');
+            $table->string('mobileNumber', 11)->unique();
+            $table->string('employeeId')->unique();
             $table->string('designation');
             $table->string('status');
             $table->string('division');

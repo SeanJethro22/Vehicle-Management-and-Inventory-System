@@ -28,7 +28,7 @@ class StorePatientRequest extends FormRequest
             'timeDate' => 'required|string|max:250',
             'patientName' => 'required|string|max:250',
             'patientGender' => 'required|string|max:250',
-            'patientContact' => 'required|string|max:11',
+            'patientContact' => 'required|string|max:11|unique:patients,patientContact',
             'patientAddress' => 'required|string|max:250',
             'destination' => 'required|string|max:250',
             'condition' => 'required|string|max:250',

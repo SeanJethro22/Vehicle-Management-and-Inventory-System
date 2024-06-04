@@ -12,9 +12,11 @@ class Part extends Model
     protected $fillable = [
 
         'code',
+        'image',
         'name',
         'category',
         'quantity',
+        'unit',
         'dop',
         'description'
     ];

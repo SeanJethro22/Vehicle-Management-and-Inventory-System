@@ -19,16 +19,17 @@ return new class extends Migration
             $table->string('series');
             $table->string('model');
             $table->string('bodyType');
-            $table->string('yearModel');
+            $table->string('yearModel', 4);
             $table->string('engineNumber')->unique();
             $table->string('chassisNumber')->unique();
             $table->string('purchaseDate');
             $table->string('registrationDate');
-            $table->string('purchaseCost');
-            $table->string('depreciationCost');
+            $table->string('purchaseCost')->nullable();
+            $table->string('depreciationCost')->nullable();
             $table->string('propertyNumber')->unique();
             $table->timestamps();
         });
+        
     }
 
     /**

@@ -18,16 +18,15 @@ return new class extends Migration
             $table->string('timeDate');
             $table->string('patientName');
             $table->string('patientGender');
-            $table->string('patientContact');
+            $table->string('patientContact', 11)->unique();
             $table->string('patientAddress');
             $table->string('destination');
             $table->string('condition');
             $table->string('reqStatus');
-            $table->foreignId('vehicles_id')->cosntrained('vehicles')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('drivers_id')->cosntrained('drivers')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('responders_id')->cosntrained('responders')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
+
+
     }
 
     /**
