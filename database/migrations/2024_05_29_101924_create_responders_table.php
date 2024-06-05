@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('employeeId')->unique();
             $table->string('position');
             $table->string('status');
+            $table->string('division');
             $table->timestamps();
         });
     }

@@ -41,11 +41,11 @@
                                 <table class="table table-striped table-bordered">
                                     <thead class="text-center">
                                         <tr>
-                                        <th scope="col">S/N</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Plate Number</th>
-                                        <th scope="col">Make</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col" width="80px">S/N</th>
+                                        <th scope="col" width="200px">Name</th>
+                                        <th scope="col" width="100px">Plate Number</th>
+                                        <th scope="col" width="150px">Make</th>
+                                        <th scope="col" width="250px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

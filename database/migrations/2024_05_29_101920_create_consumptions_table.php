@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('passenger');
             $table->string('destination');
             $table->string('purpose');
-            $table->integer('km_start');
-            $table->integer('km_end');
-            $table->integer('dist_trav');
-            $table->integer('bal_start');
-            $table->integer('bal_end');
-            $table->integer('fuel_cons');
+            $table->float('km_start');
+            $table->float('km_end');
+            $table->float('dist_trav');
+            $table->float('bal_start');
+            $table->float('bal_end');
+            $table->float('fuel_cons');
             $table->timestamps();
         });
     }
