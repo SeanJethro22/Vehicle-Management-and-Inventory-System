@@ -25,12 +25,15 @@
                   <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title text-lg"><i class="fa fa-md" aria-hidden="true"></i>&nbsp; Add New Responder</h3>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <div class="float-end">
-                                    <a href="{{ route('responders.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                            <div class="card-title m-1 text-lg">
+                                <div class="image">
+                                    <img src="{{asset('backend/dist/img/responder.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
+                                        <b class="text-success">
+                                            Add Responder
+                                        </b>
                                 </div>
                             </div>
+
                         </div> <!--diri mag end ang copy-->
                                 <div class="card-body">
                                         <form action="{{ route('responders.store') }}" method="post">
@@ -154,10 +157,10 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3 row">
-                                                <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Add Responder">
+                                            <div class="card-footer text-right">
+                                                <a href="{{ route('responders.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
+                                                <button type="submit" class="btn btn-success btn-md">Save</button>
                                             </div>
-
                                         </form>
                                 </div> <!-- /.card-body -->    
                     </div> <!-- /.card -->

@@ -108,7 +108,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{URL::to('/responders')}}" class="nav-link">
+                <a href="{{URL::to('/others')}}" class="nav-link">
                   <i class="fa fa-archive nav-icon"></i>
                   <p>Other Inventory</p>
                 </a>
@@ -144,19 +144,19 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="{{URL::to('/users')}}" class="nav-link">
-                          <i class="fa fa-male nav-icon"></i>
+                  <li class="nav-item">
+                       <a href="{{URL::to('/users')}}" class="nav-link">
+                          <i class="fa fa-user nav-icon"></i>
                           <p>Manage Users</p>
                         </a>
-                      </li>
-                    <li class="nav-item">
+                 </li>
+                 <li class="nav-item">
                       <a href="{{URL::to('/roles')}}" class="nav-link">
                         <i class="fa fa-user-md nav-icon"></i>
                         <p>Manage Roles</p>
                       </a>
-                    </li>
-                  </ul>
+                </li>
+            </ul>                  
           </li>
        
   
