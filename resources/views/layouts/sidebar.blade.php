@@ -108,7 +108,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{URL::to('/others')}}" class="nav-link">
+                <a href="{{URL::to('/items')}}" class="nav-link">
                   <i class="fa fa-archive nav-icon"></i>
                   <p>Other Inventory</p>
                 </a>

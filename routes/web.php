@@ -12,6 +12,7 @@ use App\Http\Controllers\ResponderController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\OtherController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\FullCalendarController;
 
 /*
@@ -44,6 +45,7 @@ Route::resources([
     'suppliers' => SupplierController::class,
     'vehicles' => VehicleController::class,
     'others' => OtherController::class,
+    'items' => ItemController::class,
 ]);
 
   
