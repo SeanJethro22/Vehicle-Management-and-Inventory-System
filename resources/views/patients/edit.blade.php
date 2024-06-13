@@ -25,10 +25,12 @@
                   <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title text-lg"><i class="fa fa-md" aria-hidden="true"></i>&nbsp; Update Request Details</h3>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <div class="float-end">
-                                    <a href="{{ route('patients.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                            <div class="card-title m-1 text-lg">
+                                <div class="image">
+                                    <img src="{{asset('backend/dist/img/patient.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
+                                        <b class="text-success">
+                                            Update Request
+                                        </b>
                                 </div>
                             </div>
                         </div> <!--diri mag end ang copy-->
@@ -133,10 +135,61 @@
                                                             @endif
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label for="vehicleName" class="col-form-label">Assigned Vehicle</label>
+                                                        <select name="vehicleName[]" id="vehicleName" class="form-control @error('vehicleName') is-invalid @enderror" required>
+                                                                <option selected>--Select--</option>
+                                                                @forelse ($vehicles as $vehicle)
+                                                                <option value="{{ $vehicle }}" {{ in_array($vehicle, $vehicleNmae ?? []) ? 'selected' : '' }}>
+                                                                {{ $vehicle }}
+                                                                </option>                                                    
+                                                            @empty
+                                                            @endforelse
+                                                        </select>
+                                                            @if ($errors->has('vehicleName'))
+                                                                <span class="text-danger">{{ $errors->first('vehicleName') }}</span>
+                                                            @endif
+                                                </div>
+                                            
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label for="name" class="col-form-label">Assigned Driver</label>
+                                                        <select name="name[]" id="name" class="form-control @error('name') is-invalid @enderror" required>
+                                                                <option selected>--Select--</option>
+                                                                @forelse ($drivers as $driver)
+                                                                <option value="{{ $driver }}" {{ in_array($driver, $name ?? []) ? 'selected' : '' }}>
+                                                                {{ $driver }}
+                                                                </option>                                                    
+                                                            @empty
+                                                            @endforelse
+                                                        </select>
+                                                            @if ($errors->has('name'))
+                                                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                            @endif
+                                                </div>
+
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label for="name" class="col-form-label">Assigned Responder</label>
+                                                        <select name="name[]" id="name" class="form-control @error('name') is-invalid @enderror" required>
+                                                                <option selected>--Select--</option>
+                                                                @forelse ($responders as $responder)
+                                                                <option value="{{ $responder }}" {{ in_array($responder, $name ?? []) ? 'selected' : '' }}>
+                                                                {{ $responder }}
+                                                                </option>                                                    
+                                                            @empty
+                                                            @endforelse
+                                                        </select>
+                                                            @if ($errors->has('name'))
+                                                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                            @endif
+                                                </div>
+                                            </div>
                                             
 
-                                            <div class="mb-3 row">
-                                                <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Update Request">
+                                            <div class="card-footer text-right">
+                                                <a href="{{ route('patients.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
+                                                <button type="submit" class="btn btn-success btn-md">Update</button>
                                             </div>
 
                                         </form>

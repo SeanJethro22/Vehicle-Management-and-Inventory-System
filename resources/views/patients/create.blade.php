@@ -138,41 +138,31 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <label for="plateNumber" class="col-form-label">Assigned Vehicle</label>
-                                                        <select name="plateNumber" id="plateNumber" class="form-control @error('plateNumber') is-invalid @enderror" 
-                                                                value="{{ old('plateNumber') }}" 
-                                                                {{ empty($vehicles) ? 'disabled' : '' }} required>
-
-                                                            @if (!empty($vehicles)) 
-                                                                @foreach ($vehicles as $vehicle)
-                                                                    <option value="{{ $vehicle->id }}" class="text-warning">
-                                                                        {{ $vehicle->name }} 
-                                                                    </option>
-                                                                @endforeach
-                                                            @else
-                                                                <option value="" disabled>No vehicles available</option> 
-                                                            @endif
+                                                    <label for="vehicleName" class="col-form-label">Assigned Vehicle</label>
+                                                        <select name="vehicleName[]" id="vehicleName" class="form-control @error('vehicleName') is-invalid @enderror" required>
+                                                                <option selected>--Select--</option>
+                                                                @forelse ($vehicles as $vehicle)
+                                                                <option value="{{ $vehicle }}" {{ in_array($vehicle, old('vehicleName') ?? []) ? 'selected' : '' }}>
+                                                                {{ $vehicle }}
+                                                                </option>                                                    
+                                                            @empty
+                                                            @endforelse
                                                         </select>
-                                                            @if ($errors->has('plateNumber'))
-                                                                <span class="text-danger">{{ $errors->first('plateNumber') }}</span>
+                                                            @if ($errors->has('vehicleName'))
+                                                                <span class="text-danger">{{ $errors->first('vehicleName') }}</span>
                                                             @endif
                                                 </div>
                                             
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="name" class="col-form-label">Assigned Driver</label>
-                                                        <select name="name" id="name" class="form-control @error('name') is-invalid @enderror" 
-                                                                value="{{ old('name') }}" 
-                                                                {{ empty($drivers) ? 'disabled' : '' }} required>
-
-                                                            @if (!empty($drivers)) 
-                                                                @foreach ($drivers as $driver)
-                                                                    <option value="{{ $driver->id }}" class="text-warning">
-                                                                        {{ $driver->name }} 
-                                                                    </option>
-                                                                @endforeach
-                                                            @else
-                                                                <option value="" disabled>No drivers available</option> 
-                                                            @endif
+                                                        <select name="name[]" id="name" class="form-control @error('name') is-invalid @enderror" required>
+                                                                <option selected>--Select--</option>
+                                                                @forelse ($drivers as $driver)
+                                                                <option value="{{ $driver }}" {{ in_array($driver, old('name') ?? []) ? 'selected' : '' }}>
+                                                                {{ $driver }}
+                                                                </option>                                                    
+                                                            @empty
+                                                            @endforelse
                                                         </select>
                                                             @if ($errors->has('name'))
                                                                 <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -180,20 +170,15 @@
                                                 </div>
 
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <label for="name" class="col-form-label">Assigned Reponder</label>
-                                                        <select name="name" id="name" class="form-control @error('name') is-invalid @enderror" 
-                                                                value="{{ old('name') }}" 
-                                                                {{ empty($responders) ? 'disabled' : '' }} required>
-
-                                                            @if (!empty($responders)) 
-                                                                @foreach ($responders as $responder)
-                                                                    <option value="{{ $responder->id }}" class="text-warning">
-                                                                        {{ $responder->name }} 
-                                                                    </option>
-                                                                @endforeach
-                                                            @else
-                                                                <option value="" disabled>No responders available</option> 
-                                                            @endif
+                                                    <label for="name" class="col-form-label">Assigned Responder</label>
+                                                        <select name="name[]" id="name" class="form-control @error('name') is-invalid @enderror" required>
+                                                                <option selected>--Select--</option>
+                                                                @forelse ($responders as $responder)
+                                                                <option value="{{ $responder }}" {{ in_array($responder, old('name') ?? []) ? 'selected' : '' }}>
+                                                                {{ $responder }}
+                                                                </option>                                                    
+                                                            @empty
+                                                            @endforelse
                                                         </select>
                                                             @if ($errors->has('name'))
                                                                 <span class="text-danger">{{ $errors->first('name') }}</span>

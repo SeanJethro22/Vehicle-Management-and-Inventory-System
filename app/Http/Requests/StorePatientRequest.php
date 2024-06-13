@@ -32,7 +32,10 @@ class StorePatientRequest extends FormRequest
             'patientAddress' => 'required|string|max:250',
             'destination' => 'required|string|max:250',
             'condition' => 'required|string|max:250',
-            'reqStatus' => 'required|string|max:250'
+            'reqStatus' => 'required|string|max:250',
+            'vehicles' => 'required',
+            'drivers' => 'required',
+            'responders' => 'required'
         ];
     }
 }

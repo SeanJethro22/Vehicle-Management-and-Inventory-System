@@ -7,6 +7,9 @@ use App\Http\Requests\StorePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use App\Models\Vehicle;
+use App\Models\Driver;
+use App\Models\Responder;
 
 class PatientController extends Controller
 {
@@ -37,7 +40,11 @@ class PatientController extends Controller
      */
     public function create(): View
     {
-        return view('patients.create');
+        return view('patients.create', [
+            'vehicles' => Vehicle::pluck('vehicleName')->all(),
+            'drivers' => Driver::pluck('name')->all(),
+            'responders' => Responder::pluck('name')->all()
+        ]);
     }
 
     /**
@@ -46,6 +53,7 @@ class PatientController extends Controller
     public function store(StorePatientRequest $request): RedirectResponse
     {
         Patient::create($request->all());
+        
         return redirect()->route('patients.index')
                 ->withSuccess('New Patient is added successfully.');
     }
@@ -66,7 +74,10 @@ class PatientController extends Controller
     public function edit(Patient $patient): View
     {
         return view('patients.edit', [
-            'patient' => $patient
+            'patient' => $patient,
+            'vehicles' => Vehicle::pluck('vehicleName')->all(),
+            'drivers' => Driver::pluck('name')->all(),
+            'responders' => Responder::pluck('name')->all()
         ]);
     }
 
