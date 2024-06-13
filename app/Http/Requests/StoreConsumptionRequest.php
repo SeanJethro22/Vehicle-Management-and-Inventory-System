@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreConsumptionsRequest extends FormRequest
+class StoreConsumptionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,9 +27,9 @@ class StoreConsumptionsRequest extends FormRequest
             'passenger' => 'required|string|max:250',
             'destination' => 'required|string|max:100',
             'purpose' => 'required|string|max:100',
-            'km_start' => 'required|integer|min:1|max:100',
-            'km_end' => 'required|integer|min:1|max:100',
-            'dist_trav' => 'required|integer|min:1|max:100',
+            'km_start' => 'required|integer|min:1|max:1000000',
+            'km_end' => 'required|integer|min:1|max:1000000',
+            'dist_trav' => 'required|integer|min:1|max:1000000',
             'bal_start' => 'required|integer|min:1|max:100',
             'bal_end' => 'required|integer|min:1|max:100',
             'fuel_cons' => 'required|integer|min:1|max:100'

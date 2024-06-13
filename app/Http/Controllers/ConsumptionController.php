@@ -7,6 +7,7 @@ use App\Http\Requests\StoreConsumptionRequest;
 use App\Http\Requests\UpdateConsumptionRequest;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class ConsumptionController extends Controller
 {
@@ -89,4 +90,22 @@ class ConsumptionController extends Controller
         return redirect()->route('consumptions.index')
                 ->withSuccess('Consumption is deleted successfully.');
     }
+    
+    public function calculateDistance(Request $request)
+{
+    // Validate (ensure km_start and km_end are provided)
+    $request->validate([
+        'dist_trav' => 'required|numeric',
+        'km_start' => 'required|numeric',
+        'km_end' => 'required|numeric',
+    ]);
+
+    // Flash all input values to the session (including dist_trav)
+    $request->flash(); 
+
+    // ... Your other logic (e.g., saving to the database) ...
+    
+    // Return the flashed input values (old() data)
+    return response()->json(['old' => $request->old()]); 
+}
 }

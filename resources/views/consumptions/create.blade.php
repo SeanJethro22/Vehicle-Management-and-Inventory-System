@@ -88,7 +88,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="km_start" class="col-form-label">Kilometer Start</label>
-                                                        <input type="number" class="form-control @error('km_start') is-invalid @enderror" id="km_start" name="km_start" value="{{ old('km_start') }}" required>
+                                                        <input type="number" oninput="calculate()" class="form-control @error('km_start') is-invalid @enderror" id="km_start" name="km_start" value="{{ old('km_start') }}" required>
                                                             @if ($errors->has('km_start'))
                                                                 <span class="text-danger">{{ $errors->first('km_start') }}</span>
                                                             @endif
@@ -96,7 +96,7 @@
 
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="km_end" class="col-form-label">Kilometer End</label>
-                                                        <input type="number" class="form-control @error('km_end') is-invalid @enderror" id="km_end" name="km_end" value="{{ old('km_end') }}" required>
+                                                        <input type="number" oninput="calculate()" class="form-control @error('km_end') is-invalid @enderror" id="km_end" name="km_end" value="{{ old('km_end') }}" required>
                                                             @if ($errors->has('km_end'))
                                                                 <span class="text-danger">{{ $errors->first('km_end') }}</span>
                                                             @endif
@@ -104,7 +104,7 @@
                                                             
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="dist_trav" class="col-form-label">Distance Travelled</label>
-                                                        <input type="number" class="form-control @error('dist_trav') is-invalid @enderror" id="dist_trav" name="dist_trav" value="{{ old('dist_trav') }}">
+                                                        <input type="number" class="form-control @error('dist_trav') is-invalid @enderror" id="dist_trav" name="dist_trav" value="{{ old('dist_trav') }}"  readonly>
                                                         @if ($errors->has('dist_trav'))
                                                             <span class="text-danger">{{ $errors->first('dist_trav') }}</span>
                                                         @endif
@@ -114,7 +114,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="bal_start" class="col-form-label">Balance Start</label>
-                                                        <input type="number" class="form-control @error('bal_start') is-invalid @enderror" id="bal_start" name="bal_start" value="{{ old('bal_start') }}">
+                                                        <input type="number" oninput="calculate2()" class="form-control @error('bal_start') is-invalid @enderror" id="bal_start" name="bal_start" value="{{ old('bal_start') }}">
                                                         @if ($errors->has('bal_start'))
                                                             <span class="text-danger">{{ $errors->first('bal_start') }}</span>
                                                         @endif
@@ -122,7 +122,7 @@
                                             
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="bal_end" class="col-form-label">Balance End</label>
-                                                        <input type="number" class="form-control @error('bal_end') is-invalid @enderror" id="bal_end" name="bal_end" value="{{ old('bal_end') }}">
+                                                        <input type="number" oninput="calculate2()" class="form-control @error('bal_end') is-invalid @enderror" id="bal_end" name="bal_end" value="{{ old('bal_end') }}">
                                                         @if ($errors->has('bal_end'))
                                                             <span class="text-danger">{{ $errors->first('bal_end') }}</span>
                                                         @endif
@@ -130,7 +130,7 @@
                                                 
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                                     <label for="fuel_cons" class="col-form-label">Fuel Consumed</label>
-                                                        <input type="number" class="form-control @error('fuel_cons') is-invalid @enderror" id="fuel_cons" name="fuel_cons" value="{{ old('fuel_cons') }}">
+                                                        <input type="number" class="form-control @error('fuel_cons') is-invalid @enderror" id="fuel_cons" name="fuel_cons" value="{{ old('fuel_cons') }}" readonly>
                                                         @if ($errors->has('fuel_cons'))
                                                             <span class="text-danger">{{ $errors->first('fuel_cons') }}</span>
                                                         @endif
@@ -150,4 +150,30 @@
             </div><!-- /.container-fluid -->
         </section><!-- /.section content -->
 </div><!-- /.content wrapper -->
+
+<script>
+    function calculate() 
+    {
+        var kmstart = document.getElementById("km_start").value;
+        var kmstart = parseFloat(kmstart, 2);
+        var kmend = document.getElementById("km_end").value;
+        var kmend = parseFloat(kmend, 2);
+        var dist_trav = kmend - kmstart;
+        document.getElementById("dist_trav").value = dist_trav;
+    }
+
+    function calculate2() 
+    {
+        var balstart = document.getElementById("bal_start").value;
+        var balstart = parseFloat(balstart, 2);
+        var balend = document.getElementById("bal_end").value;
+        var balend = parseFloat(balend, 2);
+        var fuel_cons = balstart - balend;
+        document.getElementById("fuel_cons").value = fuel_cons;
+    }
+</script>
 @endsection
+
+
+
+

@@ -13,6 +13,10 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\OtherController;
 use App\Http\Controllers\ItemController;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\ProfileController;
+>>>>>>> Stashed changes
 use App\Http\Controllers\FullCalendarController;
 
 /*
@@ -53,3 +57,6 @@ Route::controller(FullCalendarController::class)->group(function(){
     Route::get('fullcalendar', 'index');
     Route::post('fullcalendarAjax', 'ajax');
 });
+
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('user.profile');
+Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('user.profile.store');
