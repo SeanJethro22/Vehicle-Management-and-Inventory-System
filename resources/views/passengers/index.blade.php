@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                      <h1 class="text-lg"><b>Item Management</b></h1>
+                      <h1 class="text-lg"><b>Passenger Management</b></h1>
                     </div>
                     <div class="col-sm-6">
                     </div>
@@ -25,11 +25,11 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title text-lg">List of Items</h3>
+                        <h3 class="card-title text-lg">List of Passengers</h3>
                           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            @can('create-item')
+                            @can('create-passenger')
                             <div class="float-end">
-                                  <a href="{{ route('items.create') }}" class="btn btn-success btn-sm my-2"><i class="nav-icon fa fa-plus"></i> Add New Item</a>
+                                  <a href="{{ route('passengers.create') }}" class="btn btn-success btn-sm my-2"><i class="nav-icon fa fa-plus"></i> Add New Passenger</a>
                             </div>
                             @endcan
                           </div>
@@ -42,50 +42,49 @@
                                     <thead class="text-center">
                                         <tr>
                                         <th scope="col" width="80px">S#</th>
-                                        <th scope="col" width="150px">Code</th>
-                                        <th scope="col" width="100px">Image</th>
                                         <th scope="col" width="200px">Name</th>
+                                        <th scope="col" width="100px">Designation</th>
+                                        <th scope="col" width="150px">Division</th>
                                         <th scope="col" width="250px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($items as $item)
+                                        @forelse ($passengers as $passenger)
                                         <tr class="text-center">
                                             <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $item->code }}</td>
-                                            <td><img src="/images/{{ $item->image }}" width="50px"></td>
-                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $passenger->passengerName }}</td>
+                                            <td>{{ $passenger->position }}</td>
+                                            <td>{{ $passenger->division }}</td>
                                             <td>
-                                                <form action="{{ route('items.destroy', $item->id) }}" method="post">
-                                                        @csrf
-                                                        @method('DELETE')
+                                                <form action="{{ route('passengers.destroy', $passenger->id) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
 
-                                                        <a href="{{ route('items.show', $item->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i> Show</a>
+                                                    <a href="{{ route('passengers.show', $passenger->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i> Show</a>
 
-                                                            @can('edit-item')
-                                                                <a href="{{ route('items.edit', $item->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-wrench"></i> Edit</a>   
-                                                            @endcan
+                                                        @can('edit-passenger')
+                                                            <a href="{{ route('passengers.edit', $passenger->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-wrench"></i> Edit</a>   
+                                                        @endcan
 
-                                                            @can('delete-item')
-                                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this item?');"><i class="fa fa-trash"></i> Delete</button>
-                                                            @endcan
-                                                    </form>
+                                                        @can('delete-passenger')
+                                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this passenger?');"><i class="fa fa-trash"></i> Delete</button>
+                                                        @endcan
+                                                </form>
                                             </td>
                                         </tr>
                                         @empty
                                             <td colspan="5" class="text-center">
                                                 <span class="text-danger">
-                                                    <strong>No Item Found!</strong>
+                                                    <strong>No Passenger Found!</strong>
                                                 </span>
                                             </td>
                                         @endforelse
                                     </tbody>
                                 </table>
 
-                                {{ $items->links() }}
-                                {!! $items->withQueryString()->links('pagination::bootstrap-5') !!}
+                                {{ $passengers->links() }}
 
-                                </div> <!-- /.card-body -->
+                            </div> <!-- /.card-body -->
                     </div> <!-- /.card -->
                   </div> <!-- /.div col 12 -->
                 </div><!-- /.row -->

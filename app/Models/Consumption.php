@@ -12,14 +12,22 @@ class Consumption extends Model
     protected $fillable = [
 
         'date',
-        'passenger',
         'destination',
         'purpose',
         'km_start',
         'km_end',
+        'td1',
+        'ta1',
+        'td2',
+        'ta2',
         'dist-trav',
         'bal_start',
-        'bal-end',
-        'fuel_cons'
+        'issued',
+        'added',
+        'total',
+        'fuel_cons',
+        'bal-end'
+        
     ];
+    
 }

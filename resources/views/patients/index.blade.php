@@ -41,11 +41,11 @@
                                 <table class="table table-striped table-bordered">
                                     <thead class="text-center">
                                         <tr>
-                                        <th scope="col">S#</th>
-                                        <th scope="col">Travel Date</th>
-                                        <th scope="col">Patient Name</th>
-                                        <th scope="col">Destination</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col" width="80px">S#</th>
+                                        <th scope="col" width="200px">Travel Date</th>
+                                        <th scope="col" width="100px">Patient Name</th>
+                                        <th scope="col" width="150px">Destination</th>
+                                        <th scope="col" width="250px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

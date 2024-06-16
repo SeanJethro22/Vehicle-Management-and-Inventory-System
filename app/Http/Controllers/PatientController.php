@@ -42,8 +42,8 @@ class PatientController extends Controller
     {
         return view('patients.create', [
             'vehicles' => Vehicle::pluck('vehicleName')->all(),
-            'drivers' => Driver::pluck('name')->all(),
-            'responders' => Responder::pluck('name')->all()
+            'drivers' => Driver::pluck('driverName')->all(),
+            'responders' => Responder::pluck('responderName')->all()
         ]);
     }
 
@@ -76,8 +76,8 @@ class PatientController extends Controller
         return view('patients.edit', [
             'patient' => $patient,
             'vehicles' => Vehicle::pluck('vehicleName')->all(),
-            'drivers' => Driver::pluck('name')->all(),
-            'responders' => Responder::pluck('name')->all()
+            'drivers' => Driver::pluck('driverName')->all(),
+            'responders' => Responder::pluck('responderName')->all()
         ]);
     }
 

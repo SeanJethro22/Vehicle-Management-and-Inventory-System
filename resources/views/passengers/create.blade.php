@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                      <h1 class="text-lg"><b>Driver Management</b></h1>
+                      <h1 class="text-lg"><b>Passenger Management</b></h1>
                     </div>
                     <div class="col-sm-6">
                     </div>
@@ -27,27 +27,27 @@
                         <div class="card-header">
                             <div class="card-title m-1 text-lg">
                                 <div class="image">
-                                    <img src="{{asset('backend/dist/img/driver.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
+                                    <img src="{{asset('backend/dist/img/responder.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
                                         <b class="text-success">
-                                            Add Driver
+                                            Add Passenger
                                         </b>
                                 </div>
                             </div>
 
                         </div> <!--diri mag end ang copy-->
                                 <div class="card-body">
-                                        <form action="{{ route('drivers.store') }}" method="post">
+                                        <form action="{{ route('passengers.store') }}" method="post">
                                             @csrf
 
                                             <div class="form-group row">
                                                 <div class="col-sm-7 mb-3 mb-sm-0">
-                                                    <label for="driverName" class="col-form-label">Full Name</label>
-                                                        <input type="text" class="form-control @error('driverName') is-invalid @enderror" id="driverName" name="driverName" value="{{ old('driverName') }}" required>
-                                                        @if ($errors->has('driverName'))
-                                                            <span class="text-danger">{{ $errors->first('driverName') }}</span>
+                                                    <label for="passengerName" class="col-form-label">Full Name</label>
+                                                        <input type="text" class="form-control @error('passengerName') is-invalid @enderror" id="passengerName" name="passengerName" value="{{ old('passengerName') }}" required>
+                                                        @if ($errors->has('passengerName'))
+                                                            <span class="text-danger">{{ $errors->first('passengerName') }}</span>
                                                         @endif
                                                 </div>
-
+                                            
                                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                                     <label for="dob" class="col-form-label">Date of Birth</label>
                                                         <input type="date" class="form-control @error('dob') is-invalid @enderror" id="dob" name="dob" value="{{ old('dob') }}" required>
@@ -63,7 +63,7 @@
                                                             <span class="text-danger">{{ $errors->first('age') }}</span>
                                                         @endif
                                                 </div>
-                                            </div>                                          
+                                            </div>
 
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
@@ -87,7 +87,7 @@
                                                                 <span class="text-danger">{{ $errors->first('gender') }}</span>
                                                             @endif
                                                 </div>
-            
+         
                                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                                     <label for="civilStatus" class="col-form-label">Civil Status</label>
                                                         <select name="civilStatus" id="civilStatus" class="form-control @error('civilStatus') is-invalid @enderror" value="{{ old('civilStatus') }}" required>
@@ -101,10 +101,10 @@
                                                                 <span class="text-danger">{{ $errors->first('civilStatus') }}</span>
                                                             @endif
                                                 </div>
-
+                                            
                                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                                     <label for="mobileNumber" class="col-form-label">Mobile Number</label>
-                                                        <input type="number" class="form-control @error('mobileNumber') is-invalid @enderror" id="mobileNumber" name="mobileNumber" value="{{ old('mobileNumber') }}">
+                                                        <input type="number" class="form-control @error('mobileNumber') is-invalid @enderror" id="mobileNumber" name="mobileNumber" value="{{ old('mobileNumber') }}" required>
                                                         @if ($errors->has('mobileNumber'))
                                                             <span class="text-danger">{{ $errors->first('mobileNumber') }}</span>
                                                         @endif
@@ -112,7 +112,7 @@
 
                                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                                     <label for="employeeId" class="col-form-label">Employee ID</label>
-                                                        <input type="number" class="form-control @error('employeeId') is-invalid @enderror" id="employeeId" name="employeeId" value="{{ old('employeeId') }}">
+                                                        <input type="number" class="form-control @error('employeeId') is-invalid @enderror" id="employeeId" name="employeeId" value="{{ old('employeeId') }}" required>
                                                         @if ($errors->has('employeeId'))
                                                             <span class="text-danger">{{ $errors->first('employeeId') }}</span>
                                                         @endif
@@ -121,10 +121,10 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <label for="designation" class="col-form-label">Designation</label>
-                                                        <input type="text" class="form-control @error('designation') is-invalid @enderror" id="designation" name="designation" value="{{ old('designation') }}">
-                                                        @if ($errors->has('designation'))
-                                                            <span class="text-danger">{{ $errors->first('designation') }}</span>
+                                                    <label for="position" class="col-form-label">Designation</label>
+                                                        <input type="text" class="form-control @error('position') is-invalid @enderror" id="position" name="position" value="{{ old('position') }}">
+                                                        @if ($errors->has('position'))
+                                                            <span class="text-danger">{{ $errors->first('position') }}</span>
                                                         @endif
                                                 </div>
                                                 
@@ -158,12 +158,11 @@
                                             </div>
 
                                             <div class="card-footer text-right">
-                                                <a href="{{ route('drivers.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
+                                                <a href="{{ route('passengers.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
                                                 <button type="submit" class="btn btn-success btn-md">Save</button>
                                             </div>
                                         </form>
-                                </div> <!-- /.card-body -->
-                                    
+                                </div> <!-- /.card-body -->    
                     </div> <!-- /.card -->
                   </div> <!-- /.div col 12 -->
                 </div><!-- /.row -->

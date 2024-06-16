@@ -14,15 +14,21 @@ return new class extends Migration
         Schema::create('consumptions', function (Blueprint $table) {
             $table->id();
             $table->string('date');
-            $table->string('passenger');
             $table->string('destination');
             $table->string('purpose');
             $table->float('km_start');
             $table->float('km_end');
-            $table->float('dist_trav');
+            $table->string('td1');
+            $table->string('ta1');
+            $table->string('td2');
+            $table->string('ta2'); 
+            $table->decimal('dist_trav', 8, 2)->default(0.00);           
             $table->float('bal_start');
-            $table->float('bal_end');
+            $table->float('issued')->nullable();
+            $table->float('added');
+            $table->float('total');
             $table->float('fuel_cons');
+            $table->decimal('bal_end', 8, 2)->default(0.00);
             $table->timestamps();
         });
     }

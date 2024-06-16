@@ -41,11 +41,11 @@
                                 <table class="table table-striped table-bordered">
                                     <thead class="text-center">
                                         <tr>
-                                        <th scope="col">S#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Roles</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col" width="80px">S#</th>
+                                        <th scope="col" width="200px">Name</th>
+                                        <th scope="col" width="100px">Email</th>
+                                        <th scope="col" width="150px">Roles</th>
+                                        <th scope="col" width="250px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

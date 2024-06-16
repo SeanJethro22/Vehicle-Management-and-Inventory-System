@@ -25,19 +25,21 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title text-lg"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Driver Information</h3>
-                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <div class="float-end">
-                                    <a href="{{ route('drivers.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                            <div class="card-title m-1 text-lg">
+                                <div class="image">
+                                    <img src="{{asset('backend/dist/img/car.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
+                                        <b class="text-success">
+                                            Driver Information
+                                        </b>
                                 </div>
-                          </div>
+                            </div>
 
                       </div>
                             <div class="card-body">
                                 <div class="mb-3 row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Driver Name:</strong></label>
+                                    <label for="driverName" class="col-md-4 col-form-label text-md-end text-start"><strong>Driver Name:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $driver->name }}
+                                        {{ $driver->driverName }}
                                     </div>
                                 </div>
 
@@ -108,6 +110,10 @@
                                     <div class="col-md-6" style="line-height: 35px;">
                                         {{ $driver->division }}
                                     </div>
+                                </div>
+
+                                <div class="card-footer text-right">
+                                        <a href="{{ route('drivers.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
                                 </div>
 
                             </div> <!-- /.card-body -->

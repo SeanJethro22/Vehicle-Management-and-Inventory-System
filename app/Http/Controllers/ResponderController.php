@@ -10,9 +10,7 @@ use Illuminate\Http\RedirectResponse;
 
 class ResponderController extends Controller
 {
-    /**
-     * Instantiate a new ProductController instance.
-     */
+    
     public function __construct()
     {
        $this->middleware('auth');

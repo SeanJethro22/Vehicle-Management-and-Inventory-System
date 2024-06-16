@@ -41,18 +41,18 @@
                                 <table class="table table-striped table-bordered">
                                     <thead class="text-center">
                                         <tr>
-                                        <th scope="col">S/N</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Designation</th>
-                                        <th scope="col">Division</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col" width="80px">S#</th>
+                                        <th scope="col" width="200px">Name</th>
+                                        <th scope="col" width="100px">Designation</th>
+                                        <th scope="col" width="150px">Division</th>
+                                        <th scope="col" width="250px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($drivers as $driver)
                                         <tr class="text-center">
                                             <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $driver->name }}</td>
+                                            <td>{{ $driver->driverName }}</td>
                                             <td>{{ $driver->designation }}</td>
                                             <td>{{ $driver->division }}</td>
                                             <td>

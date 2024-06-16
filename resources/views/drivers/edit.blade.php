@@ -41,10 +41,10 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-7 mb-3 mb-sm-0">
-                                                    <label for="name" class="col-form-label">Full Name</label>
-                                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $driver->name }}" required>
-                                                        @if ($errors->has('name'))
-                                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                    <label for="driverName" class="col-form-label">Full Name</label>
+                                                        <input type="text" class="form-control @error('driverName') is-invalid @enderror" id="driverName" name="driverName" value="{{ $driver->driverName }}" required>
+                                                        @if ($errors->has('driverName'))
+                                                            <span class="text-danger">{{ $errors->first('driverName') }}</span>
                                                         @endif
                                                 </div>
 

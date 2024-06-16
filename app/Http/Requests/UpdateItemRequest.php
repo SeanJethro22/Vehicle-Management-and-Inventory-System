@@ -22,7 +22,15 @@ class UpdateItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            
+            'code' => 'required|string|max:10000|unique:items,code,'.$this->item->code,
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required|string|max:250',
+            'category' => 'required|string|max:250',
+            'quantity' => 'required|string|max:250',
+            'unit' => 'required|string|max:250',
+            'dop' => 'required|string|max:250',
+            'description' => 'nullable|string'
         ];
     }
 }

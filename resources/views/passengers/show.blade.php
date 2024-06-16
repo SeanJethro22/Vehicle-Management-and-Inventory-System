@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                      <h1 class="text-lg"><b>Vehicle Management</b></h1>
+                      <h1 class="text-lg"><b>Passenger Management</b></h1>
                     </div>
                     <div class="col-sm-6">
                     </div>
@@ -29,115 +29,94 @@
                                 <div class="image">
                                     <img src="{{asset('backend/dist/img/car.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
                                         <b class="text-success">
-                                            Vehicle Information
+                                            Passenger Information
                                         </b>
                                 </div>
                             </div>
 
                       </div>
-                        <div class="card-body">
+                            <div class="card-body">
                                 <div class="mb-3 row">
-                                    <label for="vehicleName" class="col-md-4 col-form-label text-md-end text-start"><strong>Vehicle Name:</strong></label>
+                                    <label for="passengerName" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->vehicleName }}
+                                        {{ $passenger->passengerName }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="plateNumber" class="col-md-4 col-form-label text-md-end text-start"><strong>Plate #:</strong></label>
+                                    <label for="dob" class="col-md-4 col-form-label text-md-end text-start"><strong>Date of Birth:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->plateNumber }}
+                                        {{ $passenger->dob }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="make" class="col-md-4 col-form-label text-md-end text-start"><strong>Make:</strong></label>
+                                    <label for="age" class="col-md-4 col-form-label text-md-end text-start"><strong>Age:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->make }}
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <label for="series" class="col-md-4 col-form-label text-md-end text-start"><strong>Series:</strong></label>
-                                    <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->series }}
+                                        {{ $passenger->age }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="model" class="col-md-4 col-form-label text-md-end text-start"><strong>Model:</strong></label>
+                                    <label for="address" class="col-md-4 col-form-label text-md-end text-start"><strong>Address:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->model }}
+                                        {{ $passenger->address }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="bodyType" class="col-md-4 col-form-label text-md-end text-start"><strong>Body Type:</strong></label>
+                                    <label for="gender" class="col-md-4 col-form-label text-md-end text-start"><strong>Gender:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->bodyType }}
+                                        {{ $passenger->gender }}
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="civilStatus" class="col-md-4 col-form-label text-md-end text-start"><strong>Civil Status:</strong></label>
+                                    <div class="col-md-6" style="line-height: 35px;">
+                                        {{ $passenger->civilStatus }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="yearModel" class="col-md-4 col-form-label text-md-end text-start"><strong>Year Model:</strong></label>
+                                    <label for="mobileNumber" class="col-md-4 col-form-label text-md-end text-start"><strong>Mobile Number:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->yearModel }}
+                                        {{ $passenger->mobileNumber }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="engineNumber" class="col-md-4 col-form-label text-md-end text-start"><strong>Engine Number:</strong></label>
+                                    <label for="employeeId" class="col-md-4 col-form-label text-md-end text-start"><strong>Employee ID:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->engineNumber }}
+                                        {{ $passenger->employeeId }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="chassisNumber" class="col-md-4 col-form-label text-md-end text-start"><strong>Chassis Number:</strong></label>
+                                    <label for="position" class="col-md-4 col-form-label text-md-end text-start"><strong>Designation:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->chassisNumber }}
+                                        {{ $passenger->position }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="purchaseDate" class="col-md-4 col-form-label text-md-end text-start"><strong>Purchased Date:</strong></label>
+                                    <label for="status" class="col-md-4 col-form-label text-md-end text-start"><strong>Status:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->purchaseDate }}
+                                        {{ $passenger->status }}
                                     </div>
                                 </div>
 
                                 <div class="mb-3 row">
-                                    <label for="registrationDate" class="col-md-4 col-form-label text-md-end text-start"><strong>Registration Date:</strong></label>
+                                    <label for="division" class="col-md-4 col-form-label text-md-end text-start"><strong>Division:</strong></label>
                                     <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->registrationDate }}
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 row">
-                                    <label for="purchaseCost" class="col-md-4 col-form-label text-md-end text-start"><strong>Purchased Cost:</strong></label>
-                                    <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->purchaseCost }}
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 row">
-                                    <label for="depreciationCost" class="col-md-4 col-form-label text-md-end text-start"><strong>Depreciation Cost:</strong></label>
-                                    <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->depreciationCost }}
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 row">
-                                    <label for="propertyNumber" class="col-md-4 col-form-label text-md-end text-start"><strong>Propety Numbers:</strong></label>
-                                    <div class="col-md-6" style="line-height: 35px;">
-                                        {{ $vehicle->propertyNumber }}
+                                        {{ $passenger->division }}
                                     </div>
                                 </div>
 
                                 <div class="card-footer text-right">
-                                        <a href="{{ route('vehicles.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
+                                        <a href="{{ route('passengers.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
                                 </div>
 
-                                </div> <!-- /.card-body -->
+                            </div> <!-- /.card-body -->
                         </div> <!-- /.card -->
                     </div> <!-- /.div col 12 -->
                 </div><!-- /.row -->
@@ -145,4 +124,5 @@
         </section><!-- /.section content -->
 </div><!-- /.content wrapper -->  
 @endsection
+
 

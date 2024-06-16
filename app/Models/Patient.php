@@ -20,7 +20,8 @@ class Patient extends Model
         'patientAddress',
         'destination',
         'condition',
-        'reqStatus'
+        'reqStatus',
+
     ];
     
 }

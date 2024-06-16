@@ -41,10 +41,10 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-7 mb-3 mb-sm-0">
-                                                    <label for="name" class="col-form-label">Full Name</label>
-                                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $responder->name }}" required>
-                                                        @if ($errors->has('name'))
-                                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                                    <label for="responderName" class="col-form-label">Full Name</label>
+                                                        <input type="text" class="form-control @error('responderName') is-invalid @enderror" id="responderName" name="responderName" value="{{ $responder->responderName }}" required>
+                                                        @if ($errors->has('responderName'))
+                                                            <span class="text-danger">{{ $errors->first('responderName') }}</span>
                                                         @endif
                                                 </div>
                                             

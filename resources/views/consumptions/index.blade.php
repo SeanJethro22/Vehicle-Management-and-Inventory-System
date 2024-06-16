@@ -43,8 +43,8 @@
                                         <tr>
                                         <th scope="col">S/N</th>
                                         <th scope="col">Date</th>
-                                        <th scope="col">Passenger</th>
                                         <th scope="col">Destination</th>
+                                        <th scope="col">Purpose</th>
                                         <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -53,17 +53,17 @@
                                         <tr class="text-center">
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $consumption->date }}</td>
-                                            <td>{{ $consumption->passenger }}</td>
                                             <td>{{ $consumption->destination }}</td>
+                                            <td>{{ $consumption->purpose }}</td>
                                             <td>
-                                                <form action="{{ route('cosnumptions.destroy', $consumption->id) }}" method="post">
+                                                <form action="{{ route('consumptions.destroy', $consumption->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
 
-                                                    <a href="{{ route('cosnumptions.show', $consumption->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i> Show</a>
+                                                    <a href="{{ route('consumptions.show', $consumption->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i> Show</a>
 
                                                         @can('edit-consumption')
-                                                            <a href="{{ route('cosnumptions.edit', $consumption->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-wrench"></i> Edit</a>   
+                                                            <a href="{{ route('consumptions.edit', $consumption->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-wrench"></i> Edit</a>   
                                                         @endcan
 
                                                         @can('delete-consumption')

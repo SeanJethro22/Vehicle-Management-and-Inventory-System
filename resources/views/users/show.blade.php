@@ -25,12 +25,14 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title text-lg"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;User Information</h3>
-                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <div class="float-end">
-                                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                            <div class="card-title m-1 text-lg">
+                                <div class="image">
+                                    <img src="{{asset('backend/dist/img/car.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
+                                        <b class="text-success">
+                                            User Information
+                                        </b>
                                 </div>
-                          </div>
+                            </div>
 
                       </div>
                         <div class="card-body">
@@ -63,6 +65,10 @@
                                         @empty
                                         @endforelse
                                     </div>
+                                </div>
+
+                                <div class="card-footer text-right">
+                                        <a href="{{ route('users.index') }}" class="btn btn-md btn-outline-dark"></i>Back</a>
                                 </div>
                                 </div> <!-- /.card-body -->
                         </div> <!-- /.card -->

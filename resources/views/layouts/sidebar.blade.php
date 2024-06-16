@@ -39,10 +39,18 @@
                         <p>Drivers</p>
                       </a>
                     </li>
+
                   <li class="nav-item">
                     <a href="{{URL::to('/responders')}}" class="nav-link">
                       <i class="fa fa-user-md nav-icon"></i>
                       <p>Responders</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{URL::to('/passengers')}}" class="nav-link">
+                      <i class="fa fa-user-md nav-icon"></i>
+                      <p>Passengers</p>
                     </a>
                   </li>
                 </ul>

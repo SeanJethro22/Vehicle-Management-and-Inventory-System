@@ -7,7 +7,9 @@ use App\Http\Requests\StoreConsumptionRequest;
 use App\Http\Requests\UpdateConsumptionRequest;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use App\Models\Vehicle;
+use App\Models\Driver;
+use App\Models\Passenger;
 
 class ConsumptionController extends Controller
 {
@@ -38,7 +40,11 @@ class ConsumptionController extends Controller
      */
     public function create(): View
     {
-        return view('consumptions.create');
+        return view('consumptions.create', [
+            'vehicles' => Vehicle::pluck('plateNumber')->all(),
+            'drivers' => Driver::pluck('driverName')->all(),
+            'passengers' => Passenger::pluck('passengerName')->all()
+        ]);
     }
 
     /**
@@ -46,7 +52,11 @@ class ConsumptionController extends Controller
      */
     public function store(StoreConsumptionRequest $request): RedirectResponse
     {
-        Consumption::create($request->all());
+        $data = $request->all();
+        $data['dist_trav'] = $request->km_end - $request->km_start;
+        $data['bal_end'] = $data['total'] - $data['fuel_cons'];
+
+        Consumption::create($data);
         return redirect()->route('consumptions.index')
                 ->withSuccess('New Consumption is added successfully.');
     }
@@ -67,7 +77,11 @@ class ConsumptionController extends Controller
     public function edit(Consumption $consumption): View
     {
         return view('consumptions.edit', [
-            'consumption' => $consumption
+            'consumption' => $consumption, 
+            'vehicles' => Vehicle::pluck('plateNumber')->all(),
+            'drivers' => Driver::pluck('driverName')->all(),
+            'passengers' => Passenger::pluck('passengerName')->all()
+
         ]);
     }
 
@@ -90,22 +104,4 @@ class ConsumptionController extends Controller
         return redirect()->route('consumptions.index')
                 ->withSuccess('Consumption is deleted successfully.');
     }
-    
-    public function calculateDistance(Request $request)
-{
-    // Validate (ensure km_start and km_end are provided)
-    $request->validate([
-        'dist_trav' => 'required|numeric',
-        'km_start' => 'required|numeric',
-        'km_end' => 'required|numeric',
-    ]);
-
-    // Flash all input values to the session (including dist_trav)
-    $request->flash(); 
-
-    // ... Your other logic (e.g., saving to the database) ...
-    
-    // Return the flashed input values (old() data)
-    return response()->json(['old' => $request->old()]); 
-}
 }

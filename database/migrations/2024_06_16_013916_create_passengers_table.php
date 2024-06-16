@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('drivers', function (Blueprint $table) {
+        Schema::create('passengers', function (Blueprint $table) {
             $table->id();
-            $table->string('driverName');
+            $table->string('passengerName');
             $table->string('address');
             $table->string('dob');
-            $table->string('age', 2);
+            $table->string('age');
             $table->string('gender');
             $table->string('civilStatus');
             $table->string('mobileNumber', 11)->unique();
             $table->string('employeeId')->unique();
-            $table->string('designation');
+            $table->string('position');
             $table->string('status');
             $table->string('division');
             $table->timestamps();
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('drivers');
+        Schema::dropIfExists('passengers');
     }
 };
