@@ -29,7 +29,7 @@
                 <i class="nav-icon fa fa-users" aria-hidden="true"></i>
                 <p class="text-md">
                   Employees
-                  <i class="right fas fa-angle-left"></i>
+                  <i class="right fa fa-caret-left"></i>
                 </p>
               </a>
                   <ul class="nav nav-treeview">
@@ -42,14 +42,14 @@
 
                   <li class="nav-item">
                     <a href="{{URL::to('/responders')}}" class="nav-link">
-                      <i class="fa fa-user-md nav-icon"></i>
+                      <i class="fa fa-heartbeat nav-icon"></i>
                       <p>Responders</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="{{URL::to('/passengers')}}" class="nav-link">
-                      <i class="fa fa-user-md nav-icon"></i>
+                      <i class="fa fa-universal-access nav-icon"></i>
                       <p>Passengers</p>
                     </a>
                   </li>
@@ -105,7 +105,7 @@
               <i class="nav-icon fa fa-cogs" aria-hidden="true"></i>
               <p class="text-md">
                 Parts & Inventory
-                <i class="right fas fa-angle-left"></i>
+                <i class="right fa fa-caret-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -148,7 +148,7 @@
               <i class="nav-icon fa fa-users" aria-hidden="true"></i>
               <p class="text-md">
                 Accounts
-                <i class="right fas fa-angle-left"></i>
+                <i class="right fa fa-caret-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -160,7 +160,7 @@
                  </li>
                  <li class="nav-item">
                       <a href="{{URL::to('/roles')}}" class="nav-link">
-                        <i class="fa fa-user-md nav-icon"></i>
+                        <i class="fa fa-address-book nav-icon"></i>
                         <p>Manage Roles</p>
                       </a>
                 </li>

@@ -40,7 +40,13 @@ class PermissionSeeder extends Seeder
             'delete-supplier',
             'create-vehicle',
             'edit-vehicle',
-            'delete-vehicle'
+            'delete-vehicle',
+            'create-item',
+            'edit-item',
+            'delete-item',
+            'create-passenger',
+            'edit-passenger',
+            'delete-passenger'
          ];
         
         

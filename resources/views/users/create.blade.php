@@ -105,8 +105,7 @@
                                                 <button type="submit" class="btn btn-success btn-md">Save</button>
                                             </div>
                                         </form>
-                                </div> <!-- /.card-body -->
-                                    
+                                </div> <!-- /.card-body -->   
                     </div> <!-- /.card -->
                   </div> <!-- /.div col 12 -->
                 </div><!-- /.row -->

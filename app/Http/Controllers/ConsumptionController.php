@@ -52,7 +52,7 @@ class ConsumptionController extends Controller
      */
     public function store(StoreConsumptionRequest $request): RedirectResponse
     {
-        $data = $request->all();
+        $data = $request->validated();
         $data['dist_trav'] = $request->km_end - $request->km_start;
         $data['bal_end'] = $data['total'] - $data['fuel_cons'];
 

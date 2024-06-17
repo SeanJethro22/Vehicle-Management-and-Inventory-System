@@ -46,10 +46,11 @@ Route::resources([
     'vehicles' => VehicleController::class,
     'others' => OtherController::class,
     'items' => ItemController::class,
-    'passengers' => PassengerController::class
+    'passengers' => PassengerController::class,
+    'consumptions' => ConsumptionController::class
 ]);
 
-Route::post('/consumptions', [ConsumptionController::class, 'store'])->name('consumptions.store'); 
+
   
 Route::controller(FullCalendarController::class)->group(function(){
     Route::get('fullcalendar', 'index');

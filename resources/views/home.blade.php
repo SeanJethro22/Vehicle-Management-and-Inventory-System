@@ -71,7 +71,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>1</h3>
+                <h3>43</h3>
 
                 <p>Users</p>
               </div>
@@ -86,7 +86,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>1<sup style="font-size: 20px"></sup></h3>
+                <h3>5<sup style="font-size: 20px"></sup></h3>
 
                 <p>Patient Requests</p>
               </div>

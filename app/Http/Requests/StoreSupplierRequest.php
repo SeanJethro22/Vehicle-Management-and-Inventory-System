@@ -23,11 +23,12 @@ class StoreSupplierRequest extends FormRequest
     {
         return [
            
-            'name' => 'required|string|max:250',
+            'supplierName' => 'required|string|max:250',
+            'contactPerson' => 'required|string|max:250',
+            'designation' => 'required|string|max:250',
             'contact' => 'required|string|max:250',
             'address' => 'required|string|max:250',
             'emailAddress' => 'required|string|max:250',
-            'owner' => 'required|string|max:250',
             'yearEst' => 'required|string|max:250',
             'philgepsMembership' => 'required|string|max:250'
         ];

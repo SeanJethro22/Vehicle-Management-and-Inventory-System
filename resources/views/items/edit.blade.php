@@ -27,7 +27,7 @@
                         <div class="card-header">
                             <div class="card-title m-1 text-lg">
                                 <div class="image">
-                                    <img src="{{asset('backend/dist/img/parts.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
+                                    <img src="{{asset('backend/dist/img/item.png')}}" class="img-circle elevation-2" alt="User Image" style="width: 40px;">
                                         <b class="text-success">
                                             Update Items
                                         </b>
