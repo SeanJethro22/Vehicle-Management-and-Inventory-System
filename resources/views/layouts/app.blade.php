@@ -32,7 +32,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   
-@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="{{asset('backend/dist/img/Internet.gif')}}" alt="vmis logo" height="120" width="120">
@@ -42,6 +42,7 @@
     @include('layouts.navbar')
     @include('layouts.sidebar')
     @yield('content')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
   <aside class="control-sidebar control-sidebar-light"></aside>
 
