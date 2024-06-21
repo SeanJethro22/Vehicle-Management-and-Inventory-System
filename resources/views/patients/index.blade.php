@@ -27,7 +27,7 @@
                       <div class="card-header">
                         <h3 class="card-title text-lg">List of Requests</h3>
                           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            @can('create-role')
+                            @can('create-patient')
                             <div class="float-end">
                                   <a href="{{ route('patients.create') }}" class="btn btn-success btn-sm my-2"><i class="nav-icon fa fa-plus"></i> Add New Request</a>
                             </div>

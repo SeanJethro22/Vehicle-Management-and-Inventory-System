@@ -69,7 +69,7 @@ class RoleSeeder extends Seeder
             'delete-consumption',
             'create-patient',
             'edit-patient',
-            'delete-patient',
+            'delete-patient'
         ]);
     }
 }

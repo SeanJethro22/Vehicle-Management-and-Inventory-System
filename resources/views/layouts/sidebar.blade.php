@@ -15,7 +15,7 @@
             </a>
           </li>
   
-  
+          @if (auth()->user()->hasRole('Admin'))  
           <li class="nav-item">
             <a href="{{URL::to('/vehicles')}}" class="nav-link">
               <i class="nav-icon fa fa-car" aria-hidden="true"></i>
@@ -55,7 +55,9 @@
                   </li>
                 </ul>
           </li>
+          @endif
 
+          @if (auth()->user()->hasRole('Admin') || auth()->user()->hasRole('Driver')) 
           <li class="nav-item">
             <a href="{{URL::to('/patients')}}" class="nav-link">
               <i class="nav-icon fa fa-ambulance" aria-hidden="true"></i>
@@ -99,7 +101,9 @@
               </p>
             </a>
           </li>
-             
+          @endif
+           
+          @if (auth()->user()->hasRole('Admin') || auth()->user()->hasRole('Storekeeper')) 
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-cogs" aria-hidden="true"></i>
@@ -123,7 +127,8 @@
               </li>
             </ul>
           </li>
-   
+          @endif
+          @if (auth()->user()->hasRole('Admin')) 
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fa fa-credit-card" aria-hidden="true"></i>
@@ -166,6 +171,7 @@
                 </li>
             </ul>                  
           </li>
+          @endif
        
   
         </ul>
