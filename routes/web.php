@@ -11,7 +11,6 @@ use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ResponderController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VehicleController;
-use App\Http\Controllers\OtherController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\FullCalendarController;

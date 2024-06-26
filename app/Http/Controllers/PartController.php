@@ -137,7 +137,7 @@ class PartController extends Controller
     public function destroy(Part $part): RedirectResponse
     {
         $part->delete();
-        return redirect()->route('part.index')
+        return redirect()->route('parts.index')
                 ->withSuccess('Part is deleted successfully.');
     }
 }
