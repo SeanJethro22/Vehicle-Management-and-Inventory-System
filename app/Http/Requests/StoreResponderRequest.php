@@ -23,17 +23,26 @@ class StoreResponderRequest extends FormRequest
     {
         return [
             
-            'name' => 'required|string|max:50',
-            'dob' => 'required|string|max:20',
-            'age' => 'required|integer|min:1|max:100',
-            'address' => 'required|string|max:255',
-            'gender' => 'required|string|max:10',
-            'civilStatus' => 'required|string|max:20',
-            'mobileNumber' => 'required|string|min:1|max:11|unique:responders,mobileNumber',
-            'employeeId' => 'required|string|min:1|max:10000000000|unique:responders,employeeId',
-            'position' => 'required|string|max:50',
-            'status' => 'required|string|max:50',
-            'division' => 'required|string|max:50'
+        'responderFN' => 'required|string|max:250',
+        'responderMN' => 'required|string|max:250',
+        'responderLN' => 'required|string|max:250',
+        'suffix' => 'required|string|max:250',
+        'dob' => 'required|string|max:250',
+        'age' => 'required|string|max:2',
+        'gender' => 'required|string|max:250',
+        'civilStatus' => 'required|string|max:250',
+        'mobileNumber' => 'required|string|max:250',
+        'email' => 'required|string|max:250',
+        'ca_street' => 'required|string|max:250',
+        'ca_purok' => 'required|string|max:250',
+        'ca_brgy' => 'required|string|max:250',
+        'ca_cmun' => 'required|string|max:250',
+        'ca_province' => 'required|string|max:250',
+        'ca_zipcode' => 'required|string|max:4',
+        'employeeId' => 'required|string|max:250',
+        'designation' => 'required|string|max:250',
+        'status' => 'required|string|max:250',
+        'division' => 'required|string|max:250'
         ];
     }
 }

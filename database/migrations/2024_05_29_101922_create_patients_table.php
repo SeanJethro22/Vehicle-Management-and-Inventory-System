@@ -15,14 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('requestDate');
             $table->string('travelDate');
-            $table->string('timeDate');
+            $table->string('travelTime');
             $table->string('patientName');
             $table->string('patientGender');
-            $table->string('patientContact', 11)->unique();
+            $table->string('patientAge');
+            $table->string('patientContact', 11);
             $table->string('patientAddress');
             $table->string('destination');
-            $table->string('condition');
+            $table->string('diagnoses');
             $table->string('reqStatus');
+            
             $table->timestamps();
         });
 

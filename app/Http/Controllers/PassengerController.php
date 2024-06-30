@@ -44,7 +44,7 @@ class PassengerController extends Controller
     {
         Passenger::create($request->all());
         return redirect()->route('passengers.index')
-                ->withSuccess('New Passenger is added successfully.');
+                ->with('message','New Passenger is added successfully.');
     }
 
     /**
@@ -74,7 +74,7 @@ class PassengerController extends Controller
     {
         $passenger->update($request->all());
         return redirect()->back()
-                ->withSuccess('Passenger is updated successfully.');
+                ->with('message','Passenger Information was updated successfully.');
     }
 
     /**
@@ -84,6 +84,6 @@ class PassengerController extends Controller
     {
         $passenger->delete();
         return redirect()->route('passengers.index')
-                ->withSuccess('Passenger is deleted successfully.');
+                ->with('message','Passenger was deleted in the system successfully.');
     }
 }

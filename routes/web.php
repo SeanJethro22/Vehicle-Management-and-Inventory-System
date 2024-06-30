@@ -43,15 +43,9 @@ Route::resources([
     'responders' => ResponderController::class,
     'suppliers' => SupplierController::class,
     'vehicles' => VehicleController::class,
-    'others' => OtherController::class,
     'items' => ItemController::class,
     'passengers' => PassengerController::class,
     'consumptions' => ConsumptionController::class
 ]);
 
 
-  
-Route::controller(FullCalendarController::class)->group(function(){
-    Route::get('fullcalendar', 'index');
-    Route::post('fullcalendarAjax', 'ajax');
-});

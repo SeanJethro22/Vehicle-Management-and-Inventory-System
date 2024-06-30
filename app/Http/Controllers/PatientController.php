@@ -42,8 +42,12 @@ class PatientController extends Controller
     {
         return view('patients.create', [
             'vehicles' => Vehicle::pluck('vehicleName')->all(),
-            'drivers' => Driver::pluck('driverName')->all(),
-            'responders' => Responder::pluck('responderName')->all()
+            'drivers' => Driver::all()->mapWithKeys(function ($driver) {
+                return [$driver->id => trim("{$driver->driverFN} {$driver->driverMN} {$driver->driverLN}")];
+                })->all(),
+            'responders' => Responder::all()->mapWithKeys(function ($responder) {
+                return [$responder->id => trim("{$responder->responderFN} {$responder->responderMN} {$responder->responderLN}")];
+                })->all()
         ]);
     }
 
@@ -55,7 +59,7 @@ class PatientController extends Controller
         Patient::create($request->all());
         
         return redirect()->route('patients.index')
-                ->withSuccess('New Patient is added successfully.');
+                ->with('message','A new patient request is added successfully.');
     }
 
     /**
@@ -76,8 +80,12 @@ class PatientController extends Controller
         return view('patients.edit', [
             'patient' => $patient,
             'vehicles' => Vehicle::pluck('vehicleName')->all(),
-            'drivers' => Driver::pluck('driverName')->all(),
-            'responders' => Responder::pluck('responderName')->all()
+            'drivers' => Driver::all()->mapWithKeys(function ($driver) {
+                return [$driver->id => trim("{$driver->driverFN} {$driver->driverMN} {$driver->driverLN}")];
+                })->all(),
+            'responders' => Responder::all()->mapWithKeys(function ($responder) {
+                return [$responder->id => trim("{$responder->responderFN} {$responder->responderMN} {$responder->responderLN}")];
+                })->all()
         ]);
     }
 
@@ -88,7 +96,7 @@ class PatientController extends Controller
     {
         $patient->update($request->all());
         return redirect()->back()
-                ->withSuccess('Patient is updated successfully.');
+                ->with('message','The patient request has been updated successfully.');
     }
 
     /**
@@ -98,6 +106,6 @@ class PatientController extends Controller
     {
         $patient->delete();
         return redirect()->route('patients.index')
-                ->withSuccess('Patient is deleted successfully.');
+                ->with('message','A patient request has been deleted successfully.');
     }
 }

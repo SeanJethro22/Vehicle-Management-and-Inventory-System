@@ -47,7 +47,7 @@ class DriverController extends Controller
     {
         Driver::create($request->all());
         return redirect()->route('drivers.index')
-                ->withSuccess('New Driver is added successfully.');
+                ->with('message','New Driver is added successfully.');
     }
 
     /**
@@ -77,7 +77,7 @@ class DriverController extends Controller
     {
         $driver->update($request->all());
         return redirect()->back()
-                ->withSuccess('Driver is updated successfully.');
+                ->with('message','Driver Information was updated successfully.');
     }
 
     /**
@@ -87,6 +87,6 @@ class DriverController extends Controller
     {
         $driver->delete();
         return redirect()->route('drivers.index')
-                ->withSuccess('Driver is deleted successfully.');
+                ->with('message','Driver was deleted in the system successfully.');
     }
 }

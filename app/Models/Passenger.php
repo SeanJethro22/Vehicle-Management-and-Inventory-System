@@ -11,15 +11,24 @@ class Passenger extends Model
 
     protected $fillable = [
 
-        'passengerName',
+        'passengerFN',
+        'passengerMN',
+        'passengerLN',
+        'suffix',
         'dob',
         'age',
-        'address',
         'gender',
         'civilStatus',
         'mobileNumber',
+        'email',
+        'ca_street',
+        'ca_purok',
+        'ca_brgy',
+        'ca_cmun',
+        'ca_province',
+        'ca_zipcode',
         'employeeId',
-        'position',
+        'designation',
         'status',
         'division'
     ];

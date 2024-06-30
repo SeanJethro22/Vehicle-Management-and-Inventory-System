@@ -14,19 +14,30 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('vehicleName');
-            $table->string('plateNumber')->unique();   
+            $table->string('mvfileNo');
+            $table->string('plateNumber')->nullable();
+            $table->string('engineNumber');
+            $table->string('chassisNumber');
+            $table->string('demonition');  
+            $table->string('pistonDisplacement');
+            $table->string('cylinders');
+            $table->string('fuel');
             $table->string('make');
             $table->string('series');
-            $table->string('model');
             $table->string('bodyType');
             $table->string('yearModel', 4);
-            $table->string('engineNumber')->unique();
-            $table->string('chassisNumber')->unique();
-            $table->string('purchaseDate');
+            $table->string('color');
+            $table->string('grossWt');   
+            $table->string('netWt');  
+            $table->string('shippingWt');   
+            $table->string('netCap');    
+            $table->string('purchasedDate');
             $table->string('registrationDate');
-            $table->string('purchaseCost')->nullable();
+            $table->string('orNo');
+            $table->string('purchasedCost');
             $table->string('depreciationCost')->nullable();
-            $table->string('propertyNumber')->unique();
+            $table->string('propertyNumber');
+
             $table->timestamps();
         });
         

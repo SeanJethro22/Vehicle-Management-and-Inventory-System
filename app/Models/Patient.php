@@ -13,13 +13,14 @@ class Patient extends Model
 
         'requestDate',
         'travelDate',
-        'timeDate',
+        'travelTime',
         'patientName',
         'patientGender',
+        'patientAge',
         'patientContact',
         'patientAddress',
         'destination',
-        'condition',
+        'diagnoses',
         'reqStatus',
 
     ];

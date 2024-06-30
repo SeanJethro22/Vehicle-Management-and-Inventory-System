@@ -1,10 +1,10 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #0E3386">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #024950">
 
-    <a href="#" class="brand-link" style="background-color: #041E42">
-      <img src="{{asset('backend/dist/img/vmissidebar.png')}}" alt="VMIS Logo" class="img-fluid" style="max-width: 100%; height: auto; opacity: .8">
+    <a href="#" class="brand-link text-left" style="background-color: #003135">
+      <img src="{{asset('backend/dist/img/vmissidebar.png')}}" alt="VMIS Logo" class="img-fluid" style="max-width: 190px; height: auto; opacity: .8">
     </a>
     <div class="sidebar">
-      <nav class="mt-5">
+      <nav class="mt-4">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="{{URL::to('/home')}}"" class="nav-link">

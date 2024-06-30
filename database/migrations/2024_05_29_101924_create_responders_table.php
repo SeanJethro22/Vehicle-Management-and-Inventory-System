@@ -13,17 +13,27 @@ return new class extends Migration
     {
         Schema::create('responders', function (Blueprint $table) {
             $table->id();
-            $table->string('responderName');
-            $table->string('address');
+            $table->string('responderFN');
+            $table->string('responderMN')->nullable();
+            $table->string('responderLN'); 
+            $table->string('suffix');  
             $table->string('dob');
-            $table->string('age');
+            $table->string('age', 2);
             $table->string('gender');
             $table->string('civilStatus');
-            $table->string('mobileNumber', 11)->unique();
-            $table->string('employeeId')->unique();
-            $table->string('position');
+            $table->string('mobileNumber', 11);
+            $table->string('email');  
+            $table->string('ca_street')->nullable();
+            $table->string('ca_purok');
+            $table->string('ca_brgy');
+            $table->string('ca_cmun');
+            $table->string('ca_province');
+            $table->string('ca_zipcode', 4);
+            $table->string('employeeId');
+            $table->string('designation');
             $table->string('status');
             $table->string('division');
+
             $table->timestamps();
         });
     }

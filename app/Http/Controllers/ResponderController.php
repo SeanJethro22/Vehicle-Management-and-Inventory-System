@@ -45,7 +45,7 @@ class ResponderController extends Controller
     {
         Responder::create($request->all());
         return redirect()->route('responders.index')
-                ->withSuccess('New Responder is added successfully.');
+                ->with('message','New Responder is added successfully.');
     }
 
     /**
@@ -75,7 +75,7 @@ class ResponderController extends Controller
     {
         $responder->update($request->all());
         return redirect()->back()
-                ->withSuccess('Responder is updated successfully.');
+                ->with('message','Responder Information was updated successfully.');
     }
 
     /**
@@ -85,6 +85,6 @@ class ResponderController extends Controller
     {
         $responder->delete();
         return redirect()->route('responders.index')
-                ->withSuccess('Responder is deleted successfully.');
+                ->with('message','Responder was deleted in the system successfully.');
     }
 }

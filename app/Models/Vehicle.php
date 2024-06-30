@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Vehicle extends Model
 {
     use HasFactory;
@@ -12,18 +13,29 @@ class Vehicle extends Model
     protected $fillable = [
 
         'vehicleName',
-        'plateNumber',
-        'make',
-        'series',
-        'model',
-        'bodyType',
-        'yearModel',
-        'engineNumber',
+        'mvfileNo',
+        'plateNumber', 
+        'engineNumber', 
         'chassisNumber',
-        'purchaseDate',
-        'registrationDate',
-        'purchaseCost',
-        'depreciationCost',
-        'propertyNumber',
-    ];                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+        'demonition',
+        'pistonDisplacement',
+        'cylinders',
+        'fuel',
+        'make', 
+        'series', 
+        'bodyType', 
+        'yearModel', 
+        'color',
+        'grossWt',
+        'netWt',
+        'shippingWt',
+        'netCap',        
+        'purchasedDate', 
+        'registrationDate', 
+        'orNo',
+        'purchasedCost',
+        'depreciationCost', 
+        'propertyNumber'
+    ];
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 }

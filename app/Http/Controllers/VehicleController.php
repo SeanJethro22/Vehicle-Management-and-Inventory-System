@@ -48,7 +48,7 @@ class VehicleController extends Controller
     {
         Vehicle::create($request->all());
         return redirect()->route('vehicles.index')
-                ->withSuccess('New Vehicle is added successfully.');
+                ->with('message','New Vehicle is added successfully.');
     }
 
     /**
@@ -78,7 +78,7 @@ class VehicleController extends Controller
     {
         $vehicle->update($request->all());
         return redirect()->back()
-                ->withSuccess('Vehicle is updated successfully.');
+                ->with('message','Vehicle Information was updated successfully.');
     }
 
     /**
@@ -88,6 +88,6 @@ class VehicleController extends Controller
     {
         $vehicle->delete();
         return redirect()->route('vehicles.index')
-                ->withSuccess('Vehicle is deleted successfully.');
+                ->with('message','Vehicle was deleted in the system successfully.');
     }
 }

@@ -25,17 +25,15 @@ class UpdatePatientRequest extends FormRequest
             
             'requestDate' => 'required|string|max:250',
             'travelDate' => 'required|string|max:250',
-            'timeDate' => 'required|string|max:250',
+            'travelTime' => 'required|string|max:250',
             'patientName' => 'required|string|max:250',
             'patientGender' => 'required|string|max:250',
-            'patientContact' => 'required|string|max:11|unique:patients,patientContact,'.$this->patient->patientContact,
+            'patientAge' => 'required|string|max:250',
+            'patientContact' => 'required|string|max:11',
             'patientAddress' => 'required|string|max:250',
             'destination' => 'required|string|max:250',
-            'condition' => 'required|string|max:250',
+            'diagnoses' => 'required|string|max:250',
             'reqStatus' => 'required|string|max:250',
-            'vehicleName' => 'required',
-            'name' => 'required',
-            'name' => 'required'
         ];
     }
 }

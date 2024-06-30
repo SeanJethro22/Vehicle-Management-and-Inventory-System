@@ -29,7 +29,7 @@
                 <h3>13</h3>
  
                 <p>Vehicles</p>
-              </div>
+                </div>
               <div class="icon">
                 <i class="fa fa-car"></i>
               </div>

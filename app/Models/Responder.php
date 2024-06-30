@@ -11,16 +11,26 @@ class Responder extends Model
 
     protected $fillable = [
 
-        'responderName',
+        'responderFN',
+        'responderMN',
+        'responderLN',
+        'suffix',
         'dob',
         'age',
-        'address',
         'gender',
         'civilStatus',
         'mobileNumber',
+        'email',
+        'ca_street',
+        'ca_purok',
+        'ca_brgy',
+        'ca_cmun',
+        'ca_province',
+        'ca_zipcode',
         'employeeId',
-        'position',
+        'designation',
         'status',
         'division'
     ];
+    
 }
